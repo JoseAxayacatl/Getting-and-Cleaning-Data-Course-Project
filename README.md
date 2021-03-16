@@ -6,6 +6,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 
 The repository has the following files:
+
+
  CodeBook.md  where it describe all the variables, the data and all the transformations made in the script to made all the requirements for this project.
  
  
