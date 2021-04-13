@@ -1,0 +1,46 @@
+The Cleaning_data_smatphone.R file contains the code to performs all the steps required to complete the assignament of Getting and Cleaning Data Course Project from Coursera.org
+the code has the following steps:
+
+First step. 
+Download the dataset and set the working directory under the folder called UCI HAR Dataset
+
+Second and third steps. 
+First I created 3 objects: activity (10299 rows, 1 column), subject (10299 rows, 1 column) and features (10299 rows, 561 columns).
+In each object I load the train and test file and merge both files with rbind() funtion: 
+for activity object, the Y_test.txt and Y_train.text files,
+for subject object, the subject_test.txt and subject_train.text files,
+finally, for the features object, the X_test.txt and X_train.txt files.
+
+
+Fourth step.
+I created a data frame called all.data wich contains the activity, subject and features objects.
+This data frame has 10299 rows and 563 columns, and rename the columns with the features.txt file.
+
+Then, I created a  new object called select.data, which contains only the columns from all.data object wich contains "mean" and "std" in the column name
+this object has 10299 rows and 68 columns
+
+Sixth step.
+I rename the values from activity column in the followin way:
+
+1  to  WALKING
+2  to  WALKING_UPSTAIRS
+3  to  WALKING_DOWNSTAIRS
+4  to  SITTING
+5  to  STANDING
+6  to  LAYING
+
+
+Then, i rename the labels of the data set in the followin way:
+the columns wich contain... change to ...
+"t"   to  time
+"f"   to  frequency
+"Acc" to  Accelerometer
+"Gyro" to Gyroscope
+"Mag" to  Magnitude
+"BodyBody" to Body
+
+Seventh step.
+I calculate the mean for each subject for each activity and ordered the values for subject and activity
+I saved this valuesin a new object called tidy.data (180 rows, 68 columns).
+
+Finally I created a txt file called "tidydata.txt" wich contain the data frame tidy.data
